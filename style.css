@@ -18,11 +18,10 @@ body {
 .grid-square {
     width: 28px;
     height: 28px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(251, 251, 251);
     border: 1.5px solid rgba(0, 0, 0, 0.398);
-    transition: background-color 0.3s ease;
 }
 
-.grid-square:hover {
-    background-color: rgb(180, 147, 149);
+.active {
+    background-color: rgb(163, 44, 56);
 }
