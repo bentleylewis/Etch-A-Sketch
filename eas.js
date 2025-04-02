@@ -7,27 +7,23 @@ function generateGrid() {
       gridSquare.classList.add("grid-square");
       container.appendChild(gridSquare);
       
-      gridSquare.addEventListener("pointerdown", () => {
-        pendown = true;
+      gridSquare.addEventListener("click", () => {
+        pendown = !pendown;
         gridSquare.classList.add("active");
       });
 
 
-      gridSquare.addEventListener("mouseover", () =>{
-        if (pendown) {
-          gridSquare.classList.add("active");
-        }
-      });
 
-      gridSquare.addEventListener("dragstart", (e) => {
-        e.preventDefault();
+      gridSquare.addEventListener("mouseover", () => {
+        if (pendown) {
+            gridSquare.classList.add("active");
+        }
     });
-    
     }
 }
 
-document.addEventListener("pointerup", () => {
-        pendown = false;
-      })
+container.addEventListener("mouseleave", () => {
+  pendown = false;
+});
 
 generateGrid();
